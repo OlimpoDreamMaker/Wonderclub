@@ -375,7 +375,7 @@ header .banner {
 main .nuestros-programas {
   width: 100%;
   background: #fbe23c;
-  background-image: url(../../img/background-yellow.jpg);
+  background-image: url(../img/background-yellow.jpg);
   background-position: center; }
   main .nuestros-programas .contenedor.contenedor-nuestros-programas {
     padding: 45px 0;
@@ -523,7 +523,7 @@ main .entrenadores {
       display: grid;
       grid-template-columns: minmax(200px, 270px) auto; }
       main .entrenadores .contenedor.contenedor-entrenadores .entrenador .entrenador-foto {
-        background-image: url(../../img/entrenadora.jpeg);
+        background-image: url(../img/entrenadora.jpeg);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover; }
@@ -761,7 +761,7 @@ main .equipamento {
 main .testimonios {
   width: 100%;
   background-color: #fbe23c;
-  background-image: url(../../img/background-yellow.jpg);
+  background-image: url(../img/background-yellow.jpg);
   background-position: center;
   background-repeat: no-repeat; }
   main .testimonios .contenedor.contenedor-testimonios {
@@ -1190,7 +1190,7 @@ main .especial {
 main .contacto {
   width: 100%;
   background-color: #fbe23c;
-  background-image: url(../../img/background-yellow.jpg);
+  background-image: url(../img/background-yellow.jpg);
   background-position: center; }
   main .contacto .contenedor.contenedor-contacto {
     padding: 45px 0;

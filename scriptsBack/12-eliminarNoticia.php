@@ -1,8 +1,7 @@
 <?php
 
-  require_once("datosBD.php");
   require_once("conexion.php");
-    $conexion = mysqli_connect('localhost', 'root', '', 'wonderclub');
+    $conexion = conectarBD();
 
     $idNoticia = $_GET['id'];
 
@@ -10,7 +9,7 @@
 
     mysqli_query($conexion, $sqlDeleteNoticia);
 
-    $desconectar = mysqli_close($conexion) or die("Ocurrio un error");
+    $desconectar = desconectarBD($conexion);
     header("Location: ../pages/noticias.php");
 
 ?>

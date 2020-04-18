@@ -17,42 +17,42 @@
     </div>
     <ul class="menu-vertical">
       <li>
-        <a href="#">
+        <a href="../index.php">
           Inicio
         </a>
       </li>
       <li>
-        <a href="../index.html#nuestrosProgramas" class="scroll-suave">
+        <a href="../index.html" class="scroll-suave">
           Nuestros Programas
         </a>
       </li>
       <li>
-        <a href="../index.html#entrenadores" class="scroll-suave">
+        <a href="../index.html" class="scroll-suave">
           Entrenadores
         </a>
       </li>
       <li>
-        <a href="../index.html#equipamento" class="scroll-suave">
+        <a href="../index.html" class="scroll-suave">
           Equipamento
         </a>
       </li>
       <li>
-        <a href="../index.html#testimonios" class="scroll-suave">
+        <a href="../index.html" class="scroll-suave">
           Testimonios
         </a>
       </li>
       <li>
-        <a href="../index.html#especial" class="scroll-suave">
+        <a href="../index.html" class="scroll-suave">
           Especial
         </a>
       </li>
       <li>
-        <a href="./html/blog.html">
+        <a href="#">
           Blog
         </a>
       </li>
       <li>
-        <a href="../index.html#contactos" class="scroll-suave">
+        <a href="../index.html" class="scroll-suave">
           Contactos
         </a>
       </li>
@@ -75,37 +75,32 @@
         </div>
         <ul class="menu">
           <li>
-            <a href="#nuestrosProgramas" class="scroll-suave">
+            <a href="../index.php" class="scroll-suave">
               Nuestros Programas
             </a>
           </li>
           <li>
-            <a href="#entrenadores" class="scroll-suave">
+            <a href="../index.php" class="scroll-suave">
               Entrenadores
             </a>
           </li>
           <li>
-            <a href="#testimonios" class="scroll-suave">
+            <a href="../index.php" class="scroll-suave">
               Testimonios
             </a>
           </li>
-          <!-- <li>
-            <a href="#especial" class="scroll-suave">
-              Especial
-            </a>
-          </li> -->
           <li>
             <a href="../index.php">
               Inicio
             </a>
           </li>
           <li>
-            <a href="#galeria" class="scroll-suave">
+            <a href="../index.php" class="scroll-suave">
               Galeria
             </a>
           </li>
           <li>
-            <a href="#contactos" class="scroll-suave">
+            <a href="../index.php" class="scroll-suave">
               Contactos
             </a>
           </li>
@@ -138,7 +133,8 @@
     <!--CONTENIDO-->
     <section class="contenido">
       <?php
-        $conexion = mysqli_connect('localhost', 'root', '', 'wonderclub');
+        require_once("../scriptsBack/conexion.php");
+        $conexion = conectarBD();
         $sqlSelectNoticias = "SELECT * FROM noticias";
         if($resultado = mysqli_query($conexion,$sqlSelectNoticias)){{
           while($fila = mysqli_fetch_row($resultado)){
@@ -152,7 +148,7 @@
         }
 
         }
-        $desconectar = mysqli_close($conexion) or die("Ocurrio un error");
+        $desconectar = desconectarBD($conexion) ;
       ?>
       <!--POST N°-->
       <!-- <div class="post-resumido">

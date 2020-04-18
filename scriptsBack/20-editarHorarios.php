@@ -1,14 +1,13 @@
 <?php
 session_start();
-require_once("datosBD.php");
 require_once("conexion.php");
-$conect = conectarBD($s, $u, $p, $d);
+$conexion = conectarBD();
 
 if(!empty($_SESSION['usuario'])){
   $usuario = $_SESSION['usuario'];
   $id = $_GET['id'];
   $sqlSelectHorarios = "SELECT * FROM horarios WHERE id_horarios='$id'";
-  $resultado = mysqli_query($conect, $sqlSelectHorarios);
+  $resultado = mysqli_query($conexion, $sqlSelectHorarios);
   $fila = mysqli_fetch_row($resultado);
 
   if(empty($_POST['horario'])){
@@ -49,9 +48,9 @@ if(!empty($_SESSION['usuario'])){
                         jueves='$jueves', 
                         viernes='$viernes', 
                         WHERE id_horario='$id'";
-  mysqli_query($conect, $sqlInsertHorarios);
+  mysqli_query($conexion, $sqlInsertHorarios);
 }                     
 
-desconectarBD($conect);
+$desconectar = desconectarBD($conexion);
 
 ?>

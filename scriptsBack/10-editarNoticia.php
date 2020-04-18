@@ -2,11 +2,11 @@
 session_start();
 require_once("datosBD.php");
 require_once("conexion.php");
-$conexion = mysqli_connect('localhost', 'root', '', 'wonderclub');
+$conexion = conectarBD();
 
   $id = $_GET['id'];
   $sqlSelectNoticia = "SELECT * FROM noticias WHERE id_noticias='$id'";
-  $resultado = mysqli_query($conect, $sqlSelectNoticia);
+  $resultado = mysqli_query($conexion, $sqlSelectNoticia);
   $fila = mysqli_fetch_row($resultado);
 
   if(empty($_POST['titulo'])){
@@ -35,9 +35,9 @@ $conexion = mysqli_connect('localhost', 'root', '', 'wonderclub');
                         fechaNoticia='$fechaNoticia', 
                         contenidoNoticia='$contenidoNoticia', 
                         visibleNoticia='$visibleNoticia' WHERE id_noticias='$id'";
-  mysqli_query($conect, $sqlInsertNoticia);
+  mysqli_query($conexion, $sqlInsertNoticia);
 
-  $desconectar = mysqli_close($conexion) or die("Ocurrio un error");
+  $desconectar = desconectarBD($conexion);
   header("Location: ../pages/noticias.php");
 
 ?>

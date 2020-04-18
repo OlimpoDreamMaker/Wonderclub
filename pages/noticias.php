@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require_once("../scriptsBack/conexion.php");
   $usuarioAdmin = $_SESSION['usuario'];
   echo $usuarioAdmin;
   error_reporting(0);
@@ -113,7 +114,7 @@
               <th>Eliminar</th>
             </tr>
             <?php
-            $conexion = mysqli_connect('localhost', 'root', '', 'wonderclub');
+            $conexion = conectarBD();
             $sqlSelectNoticias = "SELECT * FROM noticias";
             if($resultado = mysqli_query($conexion, $sqlSelectNoticias)){
               //id|titulo|fecha|contenido|publicada
@@ -126,8 +127,10 @@
                 echo "<td class='editar-noticia'><a href='../scriptsBack/12-eliminarNoticia.php?id=".$fila[0]."'><i class='fas fa-trash-alt'></i></a></td>";
                 echo "</tr>";
               }
+            }else{
+              
             }
-            $desconectar = mysqli_close($conexion) or die("Ocurrio un error");
+            $desconectar = desconectarBD($conexion);
             ?>
           </table>
         </div>

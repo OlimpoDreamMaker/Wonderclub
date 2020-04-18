@@ -1,13 +1,12 @@
 <?php
 session_start();
-require_once("datosBD.php");
 require_once("conexion.php");
-$conect = conectarBD($s, $u, $p, $d);
+$conexion = conectarBD();
 
 if(!empty($_SESSION['usuario'])){
   $usuario = $_SESSION['usuario'];
   $sqlSelectClientes = "SELECT * FROM clientes";
-  if($resultado = mysqli_query($conect, $sqlSelectClientes)){
+  if($resultado = mysqli_query($conexion, $sqlSelectClientes)){
     //id|nombre|apellido|numero|email|meta|mensaje|contestado|
     while($fila = mysqli_fetch_row($resultado)){
       echo "<tr>";
@@ -21,6 +20,6 @@ if(!empty($_SESSION['usuario'])){
   }
 }                      
 
-desconectarBD($conect);
+$desconectar = desconectarBD($conexion);
 
 ?>

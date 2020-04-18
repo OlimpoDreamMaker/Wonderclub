@@ -1,7 +1,7 @@
 <?php
   require_once("datosBD.php");
   require_once("conexion.php");
-  $conexion = mysqli_connect('localhost', 'root', '', 'wonderclub'); 
+  $conexion = conectarBD(); 
 
     $carpetaImg= "../noticias/";
     $tituloNoticia = $_POST['tituloNoticia'];
@@ -22,7 +22,7 @@
     echo $sqlInsertNoticia;                     
 
   
-  $desconectar = mysqli_close($conexion) or die("Ocurrio un error");
+  $desconectar = desconectarBD($conexion);
   // header("Location: ../pages/noticias.php");
 
 ?>

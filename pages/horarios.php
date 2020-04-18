@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require_once("../scriptsBack/conexion.php");
   $usuarioAdmin = $_SESSION['usuario'];
   error_reporting(0);
   if($usuarioAdmin == null || $usuarioAdmin == '' ){
@@ -125,7 +126,7 @@
               <th>Eliminar</th>
             </tr>
             <?php
-            $conexion = mysqli_connect('localhost', 'root', '', 'wonderclub');
+            $conexion = conectarBD();
             $sqlSelectHorarios = "SELECT * FROM horarios";
             if($resultado = mysqli_query($conexion, $sqlSelectHorarios)){
               //id|horario|lunes|martes|miercoles|jueves|viernes|
@@ -164,7 +165,7 @@
                 echo "</tr>";
               }
             }
-            $desconectar = mysqli_close($conexion) or die("Ocurrio un error");
+            $desconectar = desconectarBD($conexion);
             ?>
           </table>
         </div>

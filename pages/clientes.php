@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require_once("../scriptsBack/conexion.php");
   $usuarioAdmin = $_SESSION['usuario'];
   echo $usuarioAdmin;
   error_reporting(0);
@@ -90,7 +91,7 @@
               <th>Eliminar</th>
             </tr>
             <?php
-            $conexion = mysqli_connect('localhost', 'root', '', 'wonderclub');
+            $conexion = conectarBD();
             $sqlSelectClientes = "SELECT * FROM clientes";
             if($resultado = mysqli_query($conexion, $sqlSelectClientes)){
               //id|nombre|apellido|numero|email|meta|mensaje|contestado|
@@ -104,30 +105,8 @@
                 echo "</tr>";
               }
             }
-            $desconectar = mysqli_close($conexion) or die("Ocurrio un error");
+            $desconectar = desconectarBD($conexion);
             ?>
-            <!-- <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td>6</td>
-              <td>7</td>
-              <td class='editar-cliente'><i class='fas fa-pen'></i></td>
-              <td class='eliminar-cliente'><i class='fas fa-trash-alt'></i></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td>6</td>
-              <td>7</td>
-              <td class='editar-cliente'><i class='fas fa-pen'></i></td>
-              <td class='eliminar-cliente'><i class='fas fa-trash-alt'></i></td>
-            </tr> -->
           </table>
         </div>
       </div>

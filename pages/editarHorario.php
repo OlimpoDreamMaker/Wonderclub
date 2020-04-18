@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require_once("../scriptsBack/conexion.php");
   $usuarioAdmin = $_SESSION['usuario'];
   error_reporting(0);
   $id=$_GET['id'];
@@ -8,7 +9,7 @@
     die();
   }
   if(isset($_POST['submit'])){
-    $conexion = mysqli_connect('localhost', 'root', '', 'wonderclub');
+    $conexion = conectarBD();
 
     $sqlSelectHorarios = "SELECT * FROM horarios WHERE id_Horarios='$id'";
     $resultado = mysqli_query($conexion, $sqlSelectHorarios);
@@ -59,6 +60,7 @@
                           viernes='$viernes'
                           WHERE id_Horario='$id'";
     mysqli_query($conexion, $sqlUpdateHorarios);
+    $desconectar = desconectarBD($conexion);
     header("Location: ./horarios.php");
   }
 

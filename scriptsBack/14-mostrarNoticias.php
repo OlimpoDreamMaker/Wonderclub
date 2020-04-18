@@ -2,12 +2,12 @@
 session_start();
 require_once("datosBD.php");
 require_once("conexion.php");
-$conect = conectarBD($s, $u, $p, $d);
+$conexion = conectarBD();
 
 if(!empty($_SESSION['usuario'])){
   $usuario = $_SESSION['usuario'];
   $sqlSelectNoticias = "SELECT * FROM noticias";
-  if($resultado = mysqli_query($conect, $sqlSelectNoticias)){
+  if($resultado = mysqli_query($conexion, $sqlSelectNoticias)){
     //id|titulo|fecha|contenido|publicada
     while($fila = mysqli_fetch_row($resultado)){
       echo "<tr>";
@@ -21,6 +21,6 @@ if(!empty($_SESSION['usuario'])){
   }
 }                      
 
-desconectarBD($conect);
+$desconectar = desconectarBD($conexion);
 
 ?>

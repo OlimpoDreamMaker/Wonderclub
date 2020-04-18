@@ -1,8 +1,7 @@
 <?php
 session_start();
-require_once("datosBD.php");
 require_once("conexion.php");
-$conect = conectarBD($s, $u, $p, $d);
+$conexion = conectarBD();
 
 if(!empty($_SESSION['usuario'])){
   $usuario = $_SESSION['usuario'];
@@ -11,9 +10,9 @@ if(!empty($_SESSION['usuario'])){
   $sqlUpdateEstadoCliente = " UPDATE clientes SET
                         contestado=1 
                         WHERE id_cliente='$id'";
-  mysqli_query($conect, $sqlUpdateEstadoCliente);
+  mysqli_query($conexion, $sqlUpdateEstadoCliente);
 }                      
 
-desconectarBD($conect);
+$desconectar = desconectarBD($conexion);
 
 ?>

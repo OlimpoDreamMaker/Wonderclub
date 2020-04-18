@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require_once("../scriptsBack/conexion.php");
   $usuarioAdmin = $_SESSION['usuario'];
   $id = $_GET['id'];
   error_reporting(0);
@@ -8,7 +9,7 @@
     die();
   }
   if(isset($_POST['submit'])){
-    $conexion = mysqli_connect('localhost', 'root', '', 'wonderclub');
+    $conexion = conectarBD();
 
     $sqlSelectNoticia = "SELECT * FROM noticias WHERE id_noticia='$id'";
     $carpetaImg= "../noticias";
@@ -49,7 +50,7 @@
     }
     mysqli_query($conexion, $sqlUpdateNoticia);
   
-    $desconectar = mysqli_close($conexion) or die("Ocurrio un error");
+    $desconectar = desconectarBD($conexion);
     header("Location: ./noticias.php");
   }
 

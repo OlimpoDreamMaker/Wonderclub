@@ -1,15 +1,14 @@
 <?php
 
-require_once("datosBD.php");
 require_once("conexion.php");
-  $conexion = mysqli_connect('localhost', 'root', '', 'wonderclub');
+  $conexion = conectarBD();
 
   $idHorario = $_GET['id'];
 
   $sqlDeleteHorario = "DELETE FROM horarios WHERE id_Horario='$idHorario'";
   mysqli_query($conexion, $sqlDeleteHorario);
 
-  $desconectar = mysqli_close($conexion) or die("Ocurrio un error");
+  $desconectar = desconectarBD($conexion);
   header("Location: ../pages/horarios.php");
 
 ?>

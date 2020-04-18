@@ -1,6 +1,7 @@
 <?php
 
-$conexion = mysqli_connect('localhost', 'root', '', 'wonderclub');
+  require_once("conexion.php");
+  $conexion = conectarBD();
 
   $nombre = $_POST['nombre'];
   $email = $_POST['email'];
@@ -14,8 +15,8 @@ $conexion = mysqli_connect('localhost', 'root', '', 'wonderclub');
   mysqli_query($conexion, $sqlInsertClientes);                     
 
 
-$desconectar = mysqli_close($conexion) or die("Ocurrio un error");
-header("Location: ../index.php");
+  $desconectar = desconectarBD($conexion);
+  header("Location: ../index.php");
 
 
 ?>

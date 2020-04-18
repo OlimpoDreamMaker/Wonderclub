@@ -1,19 +1,14 @@
 <?php
 
-  require_once("./datosBD.php");
   require_once("./conexion.php");
-  $s = 'localhost'; //Servidor
-  $u = 'root'; //Root
-  $p = '';//Password
-  $d = 'wonderclub';//Base de Datos
 
-  $conect = mysqli_connect($s, $u, $p, $d);
+  $conexion = conectarBD();
 
   $usuario = $_POST['usuario'];
   $password = $_POST['password'];
 
   $sqlSelectUsu = "SELECT * FROM admin WHERE nombre='$usuario'";
-  if($resultUsu = mysqli_query($conect, $sqlSelectUsu)){
+  if($resultUsu = mysqli_query($conexion, $sqlSelectUsu)){
     $passUsu = mysqli_fetch_row($resultUsu)[2];// Tomo la contraseña (posicion 2) de la BD
     if($passUsu == $password){
       session_start();
@@ -28,6 +23,6 @@
     header("refresh:5; url=../pages/login.php");
   }
 
-  $desconectar = mysqli_close($conect) or die("Ocurrio un error");
+  $desconectar = desconectarBD($conexion);
 
 ?>

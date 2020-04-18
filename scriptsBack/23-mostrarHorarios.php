@@ -1,18 +1,11 @@
 <?php
 session_start();
-require_once("datosBD.php");
 require_once("conexion.php");
-$connect = new mysqli("localhost", "root", "", "wonderclub") or die('Error al conectar'. mysqli_errno($connect));
+$conexion = conectarBD();
 
-// if(!empty($_SESSION['usuario'])){
-//   $usuario = $_SESSION['usuario'];
-//   mostrarHorarios($connect);
-// }                      
-
-
-function mostrarHorarios($conect){
+function mostrarHorarios($conexion){
   $sqlSelectHorarios = "SELECT * FROM horarios";
-  if($resultado = mysqli_query($conect, $sqlSelectHorarios)){
+  if($resultado = mysqli_query($conexion, $sqlSelectHorarios)){
     //id|horario|lunes|martes|miercoles|jueves|viernes|
     while($fila = mysqli_fetch_row($resultado)){
       echo "<tr>";
@@ -54,6 +47,6 @@ function mostrarHorarios($conect){
 }
 
 
-desconectarBD($connect);
+$desconectar = desconectarBD($conexion);
 
 ?>
