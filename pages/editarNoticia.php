@@ -12,7 +12,7 @@
     $conexion = conectarBD();
 
     $sqlSelectNoticia = "SELECT * FROM noticias WHERE id_noticia='$id'";
-    $carpetaImg= "../noticias";
+    $carpetaImg = "../noticias/";
     $resultado = mysqli_query($conexion, $sqlSelectNoticia);
     $fila = mysqli_fetch_row($resultado);
   
@@ -31,9 +31,9 @@
     }else{
       $contenidoNoticia = $_POST['contenidoNoticia'];
     }
-    $foto = $_FILES["foto"]["name "];
+    $foto = $_FILES["foto"]["name"];
     $origen = $_FILES["foto"]["tmp_name"];
-    $destino $carpetaImg.$_FILES["foto"]["name"];
+    $destino = $carpetaImg.$_FILES["foto"]["name"];
     if($_FILES["foto"]["type"]=="image/jpeg" OR $_FILES["foto"]["type"]=="image/jpg" OR $_FILES["foto"]["type"]=="image/png" OR $_FILES["foto"]["type"]=="image/gif"){
       $mover_arch = move_uploaded_file($origen,$destino);
       $sqlUpdateNoticia = " UPDATE noticias SET 
@@ -45,8 +45,8 @@
       $sqlUpdateNoticia = " UPDATE noticias SET 
                             titulo='$tituloNoticia', 
                             fecha='$fechaNoticia', 
-                            contenido='$contenidoNoticia',
-                            foto='$foto' WHERE id_noticia='$id'";
+                            contenido='$contenidoNoticia'
+                            WHERE id_noticia='$id'";
     }
     mysqli_query($conexion, $sqlUpdateNoticia);
   
@@ -126,6 +126,9 @@
               <label for="fechaNoticia">Editar la fecha de la noticia:(formato aaaa-mm-dd)</label>
               <input type="text" name="fechaNoticia" id="fechaNoticia">
             </div>
+            <!-- <div class="input-foto input">
+              <input type="file" name="foto" id="foto">
+            </div>   -->
             <div class="input-contenido input">
               <label for="contenidoNoticia">Editar el contenido de la Noticia:</label>
               <textarea name="contenidoNoticia" id="contenidoNoticia" cols="30" rows="10"></textarea>

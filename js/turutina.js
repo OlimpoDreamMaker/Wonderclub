@@ -7,11 +7,11 @@ $(document).ready(function(){
                         'Dejame tus datos y cuentame tus obetivos y tus metas y me comunicare con vos'+
                       '</p>'+
                       '<form action="./scriptsBack/42-agregarCliente.php" method="POST">'+
-                        '<input type="text" name="nombre" id="nombre" placeholder="Nombre*">'+
-                        '<input type="email" name="email" id="email" placeholder="E-mail*">'+
-                        '<input type="text" name="numero" id="numero" placeholder="Telefono/Celular">'+
-                        '<input type="text" name="meta" id="meta" placeholder="Mi meta">'+
-                        '<input type="submit" value="ENVIAR">'+
+                        '<input type="text" name="nombre"  id="nombreNuevoCliente"  placeholder="Nombre*" required>'+
+                        '<input type="email" name="email" id="email" placeholder="E-mail*" required>'+
+                        '<input type="text" name="numero" id="numero" placeholder="Telefono/Celular" required>'+
+                        '<input type="text" name="meta" id="meta" placeholder="Mi meta" required>'+
+                        '<input type="submit" value="ENVIAR" id="submit">'+
                       '</form>'+
                   '</div>'+
                   '<div class="btn-cerrar" id="btnCerrar"><i class="fas fa-times"></i></div>'+

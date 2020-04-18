@@ -22,37 +22,37 @@
         </a>
       </li>
       <li>
-        <a href="../index.html" class="scroll-suave">
+        <a href="../index.php" class="scroll-suave">
           Nuestros Programas
         </a>
       </li>
       <li>
-        <a href="../index.html" class="scroll-suave">
+        <a href="../index.php" class="scroll-suave">
           Entrenadores
         </a>
       </li>
       <li>
-        <a href="../index.html" class="scroll-suave">
+        <a href="../index.php" class="scroll-suave">
           Equipamento
         </a>
       </li>
       <li>
-        <a href="../index.html" class="scroll-suave">
+        <a href="../index.php" class="scroll-suave">
           Testimonios
         </a>
       </li>
       <li>
-        <a href="../index.html" class="scroll-suave">
+        <a href="../index.php" class="scroll-suave">
           Especial
         </a>
       </li>
       <li>
         <a href="#">
-          Blog
+          Noticias
         </a>
       </li>
       <li>
-        <a href="../index.html" class="scroll-suave">
+        <a href="../index.php" class="scroll-suave">
           Contactos
         </a>
       </li>
@@ -75,17 +75,17 @@
         </div>
         <ul class="menu">
           <li>
-            <a href="../index.php" class="scroll-suave">
+            <a href="../index.php" >
               Nuestros Programas
             </a>
           </li>
           <li>
-            <a href="../index.php" class="scroll-suave">
+            <a href="../index.php">
               Entrenadores
             </a>
           </li>
           <li>
-            <a href="../index.php" class="scroll-suave">
+            <a href="../index.php">
               Testimonios
             </a>
           </li>
@@ -95,12 +95,12 @@
             </a>
           </li>
           <li>
-            <a href="../index.php" class="scroll-suave">
+            <a href="../index.php">
               Galeria
             </a>
           </li>
           <li>
-            <a href="../index.php" class="scroll-suave">
+            <a href="../index.php">
               Contactos
             </a>
           </li>

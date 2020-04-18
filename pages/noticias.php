@@ -93,7 +93,7 @@
               <input type="file" name="foto" id="foto">
             </div>
             <div class="input-contenido input">
-              <label for="contenidoNoticia">Ingrese el contenido de la Noticia:</label>
+              <label for="contenidoNoticia">Ingrese el contenido de la Noticia:(formato aaaa-mm-dd)</label>
               <textarea name="contenidoNoticia" id="contenidoNoticia" cols="30" rows="10"></textarea>
             </div>
             <div class="input-submit">
@@ -124,7 +124,7 @@
                   echo "<td>".$fila[$i]."</td>";
                 }
                 echo "<td class='editar-noticia'><a href='./editarNoticia.php?id=".$fila[0]."'><i class='fas fa-pen'></i></a></td>";
-                echo "<td class='editar-noticia'><a href='../scriptsBack/12-eliminarNoticia.php?id=".$fila[0]."'><i class='fas fa-trash-alt'></i></a></td>";
+                echo "<td class='eliminar-noticia'><a href='../scriptsBack/12-eliminarNoticia.php?id=".$fila[0]."'><i class='fas fa-trash-alt'></i></a></td>";
                 echo "</tr>";
               }
             }else{

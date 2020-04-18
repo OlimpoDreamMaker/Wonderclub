@@ -1,5 +1,4 @@
 <?php
-  require_once("datosBD.php");
   require_once("conexion.php");
   $conexion = conectarBD(); 
 
@@ -19,10 +18,9 @@
                           VALUES ('$tituloNoticia', '$fechaNoticia', '$contenidoNoticia', '$visibleNoticia')";
     }
     mysqli_query($conexion, $sqlInsertNoticia);   
-    echo $sqlInsertNoticia;                     
 
   
   $desconectar = desconectarBD($conexion);
-  // header("Location: ../pages/noticias.php");
+  header("Location: ../pages/noticias.php");
 
 ?>

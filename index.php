@@ -48,7 +48,7 @@
       </li>
       <li>
         <a href="./html/blog.html">
-          Blog
+          Noticias
         </a>
       </li>
       <li>
@@ -645,7 +645,7 @@
     </div>
 
     <!--GALERIA-->
-    <div class="galeria">
+    <div class="galeria" id="galeria">
       <div class="galeria-foto">
         <div class="foto">
           <img src="./img/g-1.jpg" alt="">
@@ -808,6 +808,7 @@
   <script src="./js/buscadorNav.js"></script>
   <script src="./js/modal.js"></script>
   <script src="./js/turutina.js"></script>
+  <!-- <script src="./js/validarCliente.js"></script> -->
 
 </body>
 </html>
