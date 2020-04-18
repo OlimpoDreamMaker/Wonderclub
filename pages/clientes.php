@@ -5,7 +5,7 @@
   echo $usuarioAdmin;
   error_reporting(0);
   if($usuarioAdmin == null || $usuarioAdmin == '' ){
-    header("Location:login.php");
+    header("Location:../admin/login.php");
     die();
   }
 

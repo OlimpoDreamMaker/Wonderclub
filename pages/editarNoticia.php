@@ -5,7 +5,7 @@
   $id = $_GET['id'];
   error_reporting(0);
   if($usuarioAdmin == null || $usuarioAdmin == '' ){
-    header("Location:login.php");
+    header("Location:../admin/login.php");
     die();
   }
   if(isset($_POST['submit'])){
@@ -123,7 +123,7 @@
               <input type="text" name="tituloNoticia" id="tituloNotiica">
             </div>
             <div class="input-fecha input">
-              <label for="fechaNoticia">Editar la fecha de la noticia:</label>
+              <label for="fechaNoticia">Editar la fecha de la noticia:(formato aaaa-mm-dd)</label>
               <input type="text" name="fechaNoticia" id="fechaNoticia">
             </div>
             <div class="input-contenido input">

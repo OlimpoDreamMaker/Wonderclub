@@ -5,7 +5,7 @@
   error_reporting(0);
   $id=$_GET['id'];
   if($usuarioAdmin == null || $usuarioAdmin == '' ){
-    header("Location:login.php");
+    header("Location:../admin/login.php");
     die();
   }
   if(isset($_POST['submit'])){

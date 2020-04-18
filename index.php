@@ -132,9 +132,6 @@
           </p>
         </div>
         <div class="nombre-gym">
-          <!-- <div class="logo">
-            <img src="./img/logo_baw.png" alt="">
-          </div> -->
           <h1 class="titulo-gym">
             Wonder Club
           </h1>
